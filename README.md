@@ -30,7 +30,7 @@ It will never add typos or fake "human" quirks to fool detectors.
 
 **Claude Code:**
 ```bash
-git clone https://github.com/yavyzc78/anti-ai-slop-editor ~/.claude/skills/anti-ai-slop-editor
+git clone https://github.com/yavuzc78/anti-ai-slop-editor ~/.claude/skills/anti-ai-slop-editor
 ```
 
 **Claude API:** upload the folder as a custom skill (see Anthropic's Agent Skills docs).
@@ -76,4 +76,4 @@ Found a pattern we miss, or a false positive? Open an issue with the sentence, t
 
 ## License
 
-MIT. Built by [Yavuz Çetinkaya](https://aiflowmatrix.com).
+MIT. Built by [Yavuz Yasin Çetinkaya](https://aiflowmatrix.com).
