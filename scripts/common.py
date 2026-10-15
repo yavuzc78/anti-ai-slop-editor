@@ -76,7 +76,7 @@ PROTECT_RES = [
     ("code", r"```.*?```|`[^`\n]+`"),
     ("quote", r"[\"“«][^\"”»\n]{8,}?[\"”»]"),
     ("date", r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}[./]\d{1,2}[./]\d{2,4}\b|\b\d{1,2}\s+(?:Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık|January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+\d{4})?\b|\bQ[1-4]\s?\d{4}\b|\b\d{1,2}:\d{2}\b"),
-    ("number", r"[%$€£₺]?\s?\d+(?:[.,]\d+)*(?:\s?(?:%|kg|km|cm|mm|ml|lt|TL|USD|EUR|GB|MB|TB|GHz|MHz|ms|sn|dk|mg|milyon|milyar|bin|million|billion)\b|%)?"),
+    ("number", r"(?<!\w)[%$€£₺]?\s?\d+(?:[.,]\d+)*(?:\s?(?:%|kg|km|cm|mm|ml|lt|TL|USD|EUR|GB|MB|TB|GHz|MHz|ms|sn|dk|mg|milyon|milyar|bin|million|billion)\b|%)?"),
 ]
 
 
@@ -102,22 +102,27 @@ def protected_spans(text, extra=None):
     for kind, rx in PROTECT_RES:
         for m in re.finditer(rx, text, re.DOTALL):
             add(kind, m.start(), m.end())
-    # proper names: capitalized sequences; at sentence start only if 2+ words (heuristic)
+    # proper names (heuristic): capitalized words not at sentence start; at sentence start only
+    # when followed by another capitalized word. Skip title-case headings and pronouns.
+    PRON = {"I", "It", "We", "You", "They", "He", "She", "This", "That", "These", "Those", "There",
+            "Bu", "Şu", "O", "Biz", "Siz", "Onlar", "Ben", "Sen", "The", "A", "An", "Bir"}
     for start, sent in sentences(text):
-        for m in re.finditer(r"\b([A-ZÇĞİÖŞÜ][\w’'-]*(?:\s+[A-ZÇĞİÖŞÜ][\w’'-]*)*)", sent):
-            name = m.group(1)
-            if m.start() == 0 and " " not in name:
+        toks = list(re.finditer(r"[^\s\-–—:;,.!?()“”\"«»]+", sent))
+        caps = [t for t in toks if t.group(0)[:1].isupper()]
+        if toks and not re.search(r"[.!?…]$", sent) and len(caps) / len(toks) > 0.5:
+            continue  # title-case heading
+        for i, t in enumerate(toks):
+            w = t.group(0)
+            if not w[:1].isupper():
                 continue
-            core = re.split(r"['’]", name)[0]
-            lead = re.match(r"(The|A|An|Bu|Şu|Bir)\s+", core)
-            if lead:
-                m_off = lead.end()
-                core = core[m_off:]
-            else:
-                m_off = 0
-            if not core:
+            core = re.split(r"['’]", w)[0]
+            if core in PRON or not core:
                 continue
-            s = start + m_off + m.start(1)
-            add("name", s, s + len(core))
+            if i == 0:
+                nxt = toks[1].group(0) if len(toks) > 1 else ""
+                if not nxt[:1].isupper():
+                    continue
+            s0 = start + t.start()
+            add("name", s0, s0 + len(core))
     spans.sort(key=lambda x: x["start"])
     return spans
