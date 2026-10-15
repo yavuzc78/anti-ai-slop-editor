@@ -1,0 +1,694 @@
+{
+ "lang": "en",
+ "version": "1.0.0",
+ "patterns": [
+  {
+   "id": "en001",
+   "regex": "in today'?s (fast-paced|ever-changing|rapidly evolving|digital|modern|competitive)( \\w+)? (world|landscape|age|era|environment)",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Delete; start with the point.",
+   "example": "In today's fast-paced world, ..."
+  },
+  {
+   "id": "en002",
+   "regex": "in (an|this) (era|age) (of|where)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Delete unless the era is the subject.",
+   "example": ""
+  },
+  {
+   "id": "en003",
+   "regex": "(the|an) ever[- ](evolving|changing|growing) (landscape|world|field)",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Name the actual change or delete.",
+   "example": ""
+  },
+  {
+   "id": "en004",
+   "regex": "in recent years,? (there has been|we have seen)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "State what happened, with data if any.",
+   "example": ""
+  },
+  {
+   "id": "en005",
+   "regex": "have you ever wondered",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Cut the rhetorical question.",
+   "example": ""
+  },
+  {
+   "id": "en006",
+   "regex": "when it comes to",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Usually removable: 'For X,' or restructure.",
+   "example": ""
+  },
+  {
+   "id": "en007",
+   "regex": "(imagine|picture) (a world|this)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Cut unless the scenario carries the piece.",
+   "example": ""
+  },
+  {
+   "id": "en008",
+   "regex": "since the dawn of (time|humanity|civilization)",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en009",
+   "regex": "(in this|this) (comprehensive |ultimate |complete |in-depth )?(article|guide|post|blog post),? (we('ll| will)|you('ll| will))",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Don't announce; deliver.",
+   "example": ""
+  },
+  {
+   "id": "en010",
+   "regex": "(let'?s|let us) (dive|delve|take a (closer|deep) look|explore|unpack|break (it|this) down)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en011",
+   "regex": "(without further ado|buckle up|grab a (coffee|cup))",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en012",
+   "regex": "(everything|all) you need to know about",
+   "category": "meta_commentary",
+   "severity": "low",
+   "hint": "Fine in a title; cut in body text.",
+   "example": ""
+  },
+  {
+   "id": "en020",
+   "regex": "\\bdelv(e|es|ed|ing)\\b",
+   "category": "ai_vocab",
+   "severity": "high",
+   "hint": "'look at', 'cover', 'examine'.",
+   "example": ""
+  },
+  {
+   "id": "en021",
+   "regex": "\\b(tapestry|testament to|treasure trove|beacon of)\\b",
+   "category": "ai_vocab",
+   "severity": "high",
+   "hint": "Delete the metaphor; state the fact.",
+   "example": ""
+  },
+  {
+   "id": "en022",
+   "regex": "\\b(realm|landscape|sphere|arena) of\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "Name the field directly.",
+   "example": "the realm of marketing → marketing"
+  },
+  {
+   "id": "en023",
+   "regex": "\\b(navigat(e|ing)) (the )?(complexities|challenges|intricacies|world)\\b",
+   "category": "ai_vocab",
+   "severity": "high",
+   "hint": "'handle', 'deal with', or be specific.",
+   "example": ""
+  },
+  {
+   "id": "en024",
+   "regex": "\\b(intricacies|intricate dance|nuanced interplay|multifaceted)\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "Simplify.",
+   "example": ""
+  },
+  {
+   "id": "en025",
+   "regex": "\\b(leverag(e|es|ed|ing)|utiliz(e|es|ed|ing))\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "'use'.",
+   "example": ""
+  },
+  {
+   "id": "en026",
+   "regex": "\\b(seamless(ly)?|robust|cutting-edge|state-of-the-art|game[- ]chang(er|ing)|revolutioniz(e|es|ing))\\b",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Say what is actually better.",
+   "example": ""
+  },
+  {
+   "id": "en027",
+   "regex": "\\b(unlock|unleash|elevate|empower|supercharge)(s|d|ing)? (your|the|its)\\b",
+   "category": "buzzword",
+   "severity": "high",
+   "hint": "State the concrete benefit.",
+   "example": ""
+  },
+  {
+   "id": "en028",
+   "regex": "\\b(harness(es|ed|ing)?) the (power|potential)\\b",
+   "category": "buzzword",
+   "severity": "high",
+   "hint": "'use'.",
+   "example": ""
+  },
+  {
+   "id": "en029",
+   "regex": "\\b(foster(s|ed|ing)?|cultivat(e|es|ed|ing)) (a sense of|an environment|a culture)\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "Be concrete.",
+   "example": ""
+  },
+  {
+   "id": "en030",
+   "regex": "\\b(bustling|vibrant|nestled|picturesque|breathtaking|awe-inspiring)\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "Use a specific detail instead.",
+   "example": ""
+  },
+  {
+   "id": "en031",
+   "regex": "\\b(embark(s|ed|ing)? on (a|your|the) (journey|quest|adventure))\\b",
+   "category": "cliche_metaphor",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en032",
+   "regex": "\\bjourney\\b",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "Fine for real trips; otherwise 'process'.",
+   "example": ""
+  },
+  {
+   "id": "en033",
+   "regex": "\\b(pivotal|paramount|crucial|vital) (role|importance|part)\\b",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Say what the role is.",
+   "example": ""
+  },
+  {
+   "id": "en034",
+   "regex": "\\bplays? (a|an) (key|crucial|vital|pivotal|significant|important) role\\b",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "State the effect directly.",
+   "example": ""
+  },
+  {
+   "id": "en035",
+   "regex": "\\b(stands? as|serves? as) a (testament|reminder|beacon)\\b",
+   "category": "significance",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en036",
+   "regex": "\\b(underscore|underscores|underscoring|highlights the importance of)\\b",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "'shows', or cut.",
+   "example": ""
+  },
+  {
+   "id": "en037",
+   "regex": "\\b(ever-increasing|ever-growing|increasingly important)\\b",
+   "category": "significance",
+   "severity": "low",
+   "hint": "Give evidence or cut.",
+   "example": ""
+  },
+  {
+   "id": "en038",
+   "regex": "\\b(look no further)\\b",
+   "category": "buzzword",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en039",
+   "regex": "\\b(whether you'?re a (seasoned|beginner|novice|pro)[^.]{0,60}or (a )?\\w+)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Name the actual reader once.",
+   "example": ""
+  },
+  {
+   "id": "en040",
+   "regex": "\\b(game-changer|next level|take (it|your \\w+) to the next level)\\b",
+   "category": "buzzword",
+   "severity": "high",
+   "hint": "Say what improves.",
+   "example": ""
+  },
+  {
+   "id": "en041",
+   "regex": "\\b(in the heart of|at the heart of)\\b",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "Use only for real places.",
+   "example": ""
+  },
+  {
+   "id": "en042",
+   "regex": "\\b(a myriad of|a plethora of|a wide (array|range|variety) of)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "'many', or list them.",
+   "example": ""
+  },
+  {
+   "id": "en043",
+   "regex": "\\b(boasts?|boasting)\\b",
+   "category": "ai_vocab",
+   "severity": "low",
+   "hint": "'has'.",
+   "example": ""
+  },
+  {
+   "id": "en044",
+   "regex": "\\b(meticulous(ly)?|painstaking(ly)?)\\b",
+   "category": "ai_vocab",
+   "severity": "low",
+   "hint": "Show the care with a detail.",
+   "example": ""
+  },
+  {
+   "id": "en045",
+   "regex": "\\b(commendable|noteworthy|it is worth noting)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Cut.",
+   "example": ""
+  },
+  {
+   "id": "en046",
+   "regex": "\\b(resonate(s|d)? with)\\b",
+   "category": "ai_vocab",
+   "severity": "low",
+   "hint": "Be specific.",
+   "example": ""
+  },
+  {
+   "id": "en047",
+   "regex": "\\b(synergy|synergies|holistic|paradigm shift)\\b",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Plain words.",
+   "example": ""
+  },
+  {
+   "id": "en048",
+   "regex": "\\b(dynamic|ever-shifting) (landscape|environment)\\b",
+   "category": "ai_vocab",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en049",
+   "regex": "\\b(shed(s|ding)? light on)\\b",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "'explain'.",
+   "example": ""
+  },
+  {
+   "id": "en050",
+   "regex": "\\b(the power of)\\b",
+   "category": "buzzword",
+   "severity": "low",
+   "hint": "Usually removable.",
+   "example": ""
+  },
+  {
+   "id": "en060",
+   "regex": "\\b(it'?s (important|worth|crucial|essential) to (note|remember|mention|understand) that)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Delete; state the point.",
+   "example": ""
+  },
+  {
+   "id": "en061",
+   "regex": "\\b(it goes without saying)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Then don't say it.",
+   "example": ""
+  },
+  {
+   "id": "en062",
+   "regex": "\\b(needless to say)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en063",
+   "regex": "\\b(at the end of the day)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en064",
+   "regex": "\\b(in order to)\\b",
+   "category": "filler",
+   "severity": "low",
+   "hint": "'to'.",
+   "example": ""
+  },
+  {
+   "id": "en065",
+   "regex": "\\b(due to the fact that|owing to the fact that)\\b",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "'because'.",
+   "example": ""
+  },
+  {
+   "id": "en066",
+   "regex": "\\b(a (wide|broad) (range|spectrum) of)\\b",
+   "category": "filler",
+   "severity": "low",
+   "hint": "List or cut.",
+   "example": ""
+  },
+  {
+   "id": "en067",
+   "regex": "\\b(the fact that)\\b",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Often removable.",
+   "example": ""
+  },
+  {
+   "id": "en068",
+   "regex": "\\b(really|truly|incredibly|extremely|absolutely|undeniably|undoubtedly)\\b",
+   "category": "intensifier",
+   "severity": "low",
+   "hint": "Density matters; cut most.",
+   "example": ""
+  },
+  {
+   "id": "en069",
+   "regex": "\\b(very|quite|rather) (important|unique|essential)\\b",
+   "category": "intensifier",
+   "severity": "low",
+   "hint": "Drop the intensifier.",
+   "example": ""
+  },
+  {
+   "id": "en070",
+   "regex": "\\b(can (potentially|possibly)|may potentially|might possibly)\\b",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "One hedge is enough.",
+   "example": ""
+  },
+  {
+   "id": "en071",
+   "regex": "\\b(arguably|to some extent|in some ways|in many ways)\\b",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Commit or remove.",
+   "example": ""
+  },
+  {
+   "id": "en072",
+   "regex": "\\b(results may vary|everyone is different|it depends on (your|individual) (needs|circumstances))\\b",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Say what it depends on.",
+   "example": ""
+  },
+  {
+   "id": "en073",
+   "regex": "\\b(consult (a|with a) (professional|expert|doctor))\\b",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Keep only if genuinely needed.",
+   "example": ""
+  },
+  {
+   "id": "en074",
+   "regex": "\\b(generally speaking|broadly speaking)\\b",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Cut.",
+   "example": ""
+  },
+  {
+   "id": "en075",
+   "regex": "\\b(it could be argued that|one could argue that)\\b",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Make the argument.",
+   "example": ""
+  },
+  {
+   "id": "en076",
+   "regex": "\\b(various|numerous|several) (benefits|advantages|factors|aspects)\\b",
+   "category": "vague",
+   "severity": "medium",
+   "hint": "Name them.",
+   "example": ""
+  },
+  {
+   "id": "en077",
+   "regex": "\\b(plays? into|in terms of)\\b",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Rephrase.",
+   "example": ""
+  },
+  {
+   "id": "en080",
+   "regex": "\\b(it'?s not (just|only|merely) (about )?[^.,]{1,40}[,;—–-]+ ?it'?s)",
+   "category": "balanced",
+   "severity": "high",
+   "hint": "State the real claim once.",
+   "example": "It's not just a tool — it's a lifestyle."
+  },
+  {
+   "id": "en081",
+   "regex": "\\bnot (just|only|merely) [^.,]{1,40},? but (also )?",
+   "category": "balanced",
+   "severity": "medium",
+   "hint": "Check frequency; keep one per piece at most.",
+   "example": ""
+  },
+  {
+   "id": "en082",
+   "regex": "\\b(both|whether) [^.]{1,40} (and|or) [^.]{1,40} alike\\b",
+   "category": "balanced",
+   "severity": "low",
+   "hint": "Simplify.",
+   "example": ""
+  },
+  {
+   "id": "en083",
+   "regex": "\\b(a double-edged sword)\\b",
+   "category": "cliche_metaphor",
+   "severity": "high",
+   "hint": "State the trade-off concretely.",
+   "example": ""
+  },
+  {
+   "id": "en084",
+   "regex": "\\b(on the other hand|on one hand)\\b",
+   "category": "balanced",
+   "severity": "low",
+   "hint": "Fine once; watch repetition.",
+   "example": ""
+  },
+  {
+   "id": "en085",
+   "regex": "\\b(while [^.,]{3,60}, it'?s (also )?(important|essential|crucial) to)\\b",
+   "category": "balanced",
+   "severity": "medium",
+   "hint": "Restructure.",
+   "example": ""
+  },
+  {
+   "id": "en090",
+   "regex": "^(moreover|furthermore|additionally|in addition|consequently|nevertheless),",
+   "category": "transition",
+   "severity": "low",
+   "hint": "Sentence-initial connectors stacked → cut most.",
+   "example": ""
+  },
+  {
+   "id": "en091",
+   "regex": "\\b(that being said|having said that|with that in mind|that said)\\b",
+   "category": "transition",
+   "severity": "low",
+   "hint": "Cut.",
+   "example": ""
+  },
+  {
+   "id": "en100",
+   "regex": "\\b(in conclusion|to sum up|in summary|to summarize|all in all|ultimately|in essence)\\b",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Cut the summary paragraph unless it adds something.",
+   "example": ""
+  },
+  {
+   "id": "en101",
+   "regex": "\\b(by (following|implementing|understanding) (these|this) [^.]{0,40}, you('ll| will| can))",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Delete the promise.",
+   "example": ""
+  },
+  {
+   "id": "en102",
+   "regex": "\\bthe (future|possibilities)( of [^.]{1,40}?)? (is|are|looks) (bright|endless|limitless|exciting)\\b",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en103",
+   "regex": "\\b(only time will tell)\\b",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en104",
+   "regex": "\\b(remember,? (the key|success|consistency) is)\\b",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en105",
+   "regex": "\\bwe hope (this|you found this|that this)( article| guide| post)?( was| is| has been)? (helpful|useful|informative)",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en106",
+   "regex": "\\b(happy (cooking|reading|shopping|travels|coding|gardening))[!.]",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en107",
+   "regex": "\\b(as (we('ve)?|you('ve)?) (seen|explored|discussed))\\b",
+   "category": "closing",
+   "severity": "low",
+   "hint": "Cut the recap cue.",
+   "example": ""
+  },
+  {
+   "id": "en108",
+   "regex": "\\b(continues? to (evolve|shape|grow))\\b",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Say how, or cut.",
+   "example": ""
+  },
+  {
+   "id": "en110",
+   "regex": "\\b(great|excellent|good) question\\b",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en111",
+   "regex": "^(certainly|absolutely|of course|sure)[!,.]",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en112",
+   "regex": "\\b(i hope this helps|hope this helps)\\b",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en113",
+   "regex": "\\b(feel free to (reach out|ask|contact))\\b",
+   "category": "chatbot_residue",
+   "severity": "medium",
+   "hint": "Delete or make specific.",
+   "example": ""
+  },
+  {
+   "id": "en114",
+   "regex": "\\b(as an ai( language model)?)\\b",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en115",
+   "regex": "\\b(let me know if you (have any|need any(thing)?|would like))",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  },
+  {
+   "id": "en116",
+   "regex": "\\b(here('s| is| are) (a|some) (breakdown|overview|list|few))\\b",
+   "category": "chatbot_residue",
+   "severity": "low",
+   "hint": "Cut the lead-in.",
+   "example": ""
+  },
+  {
+   "id": "en117",
+   "regex": "\\b(i('d| would) be (happy|glad) to)\\b",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Delete.",
+   "example": ""
+  }
+ ]
+}

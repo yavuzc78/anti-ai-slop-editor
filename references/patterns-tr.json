@@ -1,0 +1,726 @@
+{
+ "lang": "tr",
+ "version": "1.0.0",
+ "patterns": [
+  {
+   "id": "tr001",
+   "regex": "günümüzün hızla (değişen|gelişen)( \\w+)? dünyasında",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Açılışı sil, doğrudan konuya gir.",
+   "example": "Günümüzün hızla değişen dünyasında e-ticaret büyüyor."
+  },
+  {
+   "id": "tr002",
+   "regex": "günümüz(de|ün) (dijital|modern|teknoloji) (çağında|dünyasında)",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Zaman çerçevesi gerçekten gerekmiyorsa sil.",
+   "example": "Günümüz dijital çağında herkes online."
+  },
+  {
+   "id": "tr003",
+   "regex": "(teknolojinin|dijitalleşmenin) hızla (geliştiği|ilerlediği) (bu|günümüz) (çağda|dönemde|dünyada)",
+   "category": "stock_opener",
+   "severity": "high",
+   "hint": "Sil; somut bir gözlemle başla.",
+   "example": ""
+  },
+  {
+   "id": "tr004",
+   "regex": "son yıllarda (giderek|her geçen gün) (artan|önem kazanan)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Somut veri yoksa sadeleştir: 'X yaygınlaştı'.",
+   "example": ""
+  },
+  {
+   "id": "tr005",
+   "regex": "her geçen gün (daha da )?(önem kazan|artan|büyüyen)\\w*",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Kanıt yoksa sil ya da somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr006",
+   "regex": "(bu|bu kapsamlı) (yazımızda|makalemizde|rehberimizde|içeriğimizde)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Metnin ne yapacağını anlatma, yap.",
+   "example": "Bu yazımızda X'i ele alacağız."
+  },
+  {
+   "id": "tr007",
+   "regex": "(sizler|siz) için (derledik|hazırladık)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr008",
+   "regex": "merak ettiğiniz (her şeyi|tüm detayları|tüm sorulara)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Sil; içerik kendini göstersin.",
+   "example": ""
+  },
+  {
+   "id": "tr009",
+   "regex": "(detaylı|ayrıntılı) (bir şekilde|olarak) (ele alacağız|inceleyeceğiz|açıklayacağız)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr010",
+   "regex": "hiç (düşündünüz mü|merak ettiniz mi)",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Retorik soru açılışını kaldır.",
+   "example": ""
+  },
+  {
+   "id": "tr011",
+   "regex": "(gelin|haydi),? (birlikte )?(inceleyelim|bakalım|keşfedelim)",
+   "category": "meta_commentary",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": "Gelin birlikte inceleyelim."
+  },
+  {
+   "id": "tr012",
+   "regex": "(şimdi|öyleyse) (gelin )?(detaylara|ayrıntılara) (inelim|geçelim)",
+   "category": "meta_commentary",
+   "severity": "low",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr013",
+   "regex": "insanlık tarihi boyunca",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Konu tarih değilse sil.",
+   "example": ""
+  },
+  {
+   "id": "tr014",
+   "regex": "(çağımızın|günümüzün) en (önemli|büyük) (sorunlarından|konularından) biri",
+   "category": "stock_opener",
+   "severity": "medium",
+   "hint": "Abartıyı kaldır.",
+   "example": ""
+  },
+  {
+   "id": "tr020",
+   "regex": "(önemli|kritik|büyük|hayati|kilit) (bir )?rol (oyna|üstlen)\\w*",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Rolün ne olduğunu söyle ya da fiili sadeleştir.",
+   "example": "Yapay zekâ önemli bir rol oynamaktadır."
+  },
+  {
+   "id": "tr021",
+   "regex": "(büyük|kritik|hayati) (bir )?önem (taşı|arz et)\\w*",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "'önemli' yeter; neden önemli olduğunu söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr022",
+   "regex": "vazgeçilmez (bir )?(parçası|unsuru|bileşeni)",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr023",
+   "regex": "(ayrılmaz|ayrılmaz bir) parçası haline gel\\w*",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr024",
+   "regex": "(çığır açan|devrim niteliğinde|devrim yaratan|oyunun kurallarını değiştiren)",
+   "category": "buzzword",
+   "severity": "high",
+   "hint": "Abartıyı kaldır; ne değiştiğini söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr025",
+   "regex": "(yepyeni bir|yeni bir) (boyut|soluk|kapı|çağ) (kazandır|aç|getir)\\w*",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Mecazı kaldır, etkiyi söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr026",
+   "regex": "(kapılarını|kapısını) (arala|aç)\\w*",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr027",
+   "regex": "(köşe ?taşı|mihenk taşı|yapı taşı)( niteliğinde)?",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "Gerekli değilse sil.",
+   "example": ""
+  },
+  {
+   "id": "tr028",
+   "regex": "(sınırları|sınırlarını) (zorla|aş|ortadan kaldır)\\w*",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "Somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr029",
+   "regex": "(eşsiz|benzersiz|muhteşem|mükemmel) bir (deneyim|fırsat|yolculuk)",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Neyin özel olduğunu göster.",
+   "example": ""
+  },
+  {
+   "id": "tr030",
+   "regex": "(unutulmaz|büyüleyici|nefes kesen) bir (deneyim|yolculuk|atmosfer)",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Somut detay ver.",
+   "example": ""
+  },
+  {
+   "id": "tr031",
+   "regex": "(yolculuğa|serüvene) (çıkın|çıkalım|davet ediyoruz)",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr032",
+   "regex": "(dünyasına|evrenine) (adım atın|yolculuk|bir yolculuk)",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr033",
+   "regex": "(potansiyelinizi|potansiyelini) (ortaya çıkar|açığa çıkar|en üst düzeye çıkar)\\w*",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Somut fayda yaz.",
+   "example": ""
+  },
+  {
+   "id": "tr034",
+   "regex": "(bir sonraki|üst) seviyeye taşı\\w*",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Ne iyileşiyor, söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr035",
+   "regex": "göz ardı (edilmemesi gereken|edilmemelidir|edilemeyecek|edilemez)",
+   "category": "significance",
+   "severity": "low",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr036",
+   "regex": "(dikkat çekici|dikkat çeken) bir (şekilde|biçimde)",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr040",
+   "regex": "\\w+mektedir|\\w+maktadır",
+   "category": "formal_overload",
+   "severity": "low",
+   "hint": "Blogda '-iyor/-ır' kullan; yoğunluk önemli.",
+   "example": "artmaktadır → artıyor"
+  },
+  {
+   "id": "tr041",
+   "regex": "söz konusu (olmaktadır|olmakta|olabilmektedir)",
+   "category": "formal_overload",
+   "severity": "medium",
+   "hint": "'var' / 'oluyor' de.",
+   "example": ""
+  },
+  {
+   "id": "tr042",
+   "regex": "(yer almaktadır|bulunmaktadır)",
+   "category": "formal_overload",
+   "severity": "low",
+   "hint": "'var' / 'bulunur'.",
+   "example": ""
+  },
+  {
+   "id": "tr043",
+   "regex": "(gerçekleştirilmektedir|gerçekleştirilmiştir|gerçekleştirilir)",
+   "category": "formal_overload",
+   "severity": "low",
+   "hint": "'yapılıyor/yapıldı'.",
+   "example": ""
+  },
+  {
+   "id": "tr044",
+   "regex": "(sağlamaktadır|sağlanmaktadır)",
+   "category": "formal_overload",
+   "severity": "low",
+   "hint": "Fiili somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr045",
+   "regex": "(olduğunu|olduğu) (söylemek|belirtmek) (mümkündür|gerekir|gerekmektedir)",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Doğrudan söyle.",
+   "example": "X olduğunu söylemek mümkündür → X."
+  },
+  {
+   "id": "tr046",
+   "regex": "(şunu|bunu) (belirtmek|söylemek|vurgulamak) (gerekir|isteriz|gerekmektedir|lazım)",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Sil, cümleyi doğrudan kur.",
+   "example": ""
+  },
+  {
+   "id": "tr047",
+   "regex": "(belirtmekte|vurgulamakta) fayda (var|vardır)",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr048",
+   "regex": "(unutulmamalıdır|unutmamak gerekir) ki",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr049",
+   "regex": "(bilindiği|görüldüğü) (üzere|gibi)",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Gereksizse sil.",
+   "example": ""
+  },
+  {
+   "id": "tr050",
+   "regex": "(bu noktada|bu bağlamda|bu çerçevede|bu doğrultuda)",
+   "category": "transition",
+   "severity": "low",
+   "hint": "Çoğu yerde silinebilir.",
+   "example": ""
+  },
+  {
+   "id": "tr051",
+   "regex": "(öte yandan|diğer taraftan|bunun yanı sıra|buna ek olarak|ayrıca belirtmek gerekir ki)",
+   "category": "transition",
+   "severity": "low",
+   "hint": "Paragraf başında art arda kullanılıyorsa azalt.",
+   "example": ""
+  },
+  {
+   "id": "tr052",
+   "regex": "(bir şekilde|bir biçimde) (ele alınmalı|değerlendirilmeli)",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Nasıl, söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr053",
+   "regex": "(etkili|verimli|doğru) bir şekilde",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Zarfı tek kelimeye indir ya da sil.",
+   "example": "etkili bir şekilde → etkili"
+  },
+  {
+   "id": "tr054",
+   "regex": "(büyük|önemli) ölçüde",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Ölçü yoksa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr055",
+   "regex": "(oldukça|son derece|gayet|epey) (önemli|faydalı|etkili|başarılı)",
+   "category": "intensifier",
+   "severity": "low",
+   "hint": "Pekiştireci kaldır.",
+   "example": ""
+  },
+  {
+   "id": "tr056",
+   "regex": "(kesinlikle|şüphesiz|şüphesiz ki|hiç şüphesiz|tartışmasız)",
+   "category": "intensifier",
+   "severity": "medium",
+   "hint": "Kanıt yoksa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr057",
+   "regex": "(muazzam|inanılmaz|harika|mükemmel) (bir )?(şekilde|derecede|seviyede)",
+   "category": "intensifier",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr058",
+   "regex": "(gerçekten|tam anlamıyla|kelimenin tam anlamıyla)",
+   "category": "intensifier",
+   "severity": "low",
+   "hint": "Çoğu yerde gereksiz.",
+   "example": ""
+  },
+  {
+   "id": "tr059",
+   "regex": "(pek çok|birçok|çok sayıda) (farklı )?(alanda|sektörde|konuda)",
+   "category": "vague",
+   "severity": "low",
+   "hint": "Hangi alanlar? Örnek ver ya da sil.",
+   "example": ""
+  },
+  {
+   "id": "tr060",
+   "regex": "(çeşitli|farklı) (faydalar|avantajlar|imkânlar|olanaklar) (sun|sağla)\\w*",
+   "category": "vague",
+   "severity": "medium",
+   "hint": "Faydaları say.",
+   "example": ""
+  },
+  {
+   "id": "tr061",
+   "regex": "(geniş|zengin) bir (yelpaze|yelpazesi|seçenek yelpazesi)",
+   "category": "cliche_metaphor",
+   "severity": "low",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr062",
+   "regex": "(ihtiyaçlarınıza|beklentilerinize) (uygun|yönelik|cevap veren) (çözümler|seçenekler)",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Hangi çözüm? Somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr063",
+   "regex": "(kullanıcı dostu|yenilikçi|inovatif|son teknoloji) (bir )?(çözüm|yaklaşım|platform|arayüz)",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Neyin yeni olduğunu söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr064",
+   "regex": "(sürdürülebilir|bütüncül|holistik) (bir )?(yaklaşım|bakış açısı)",
+   "category": "buzzword",
+   "severity": "low",
+   "hint": "Somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr065",
+   "regex": "(fark yaratan|fark yaratır|farkı yaratan)",
+   "category": "buzzword",
+   "severity": "medium",
+   "hint": "Farkı söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr066",
+   "regex": "(katma değer) (sağla|yarat|sun)\\w*",
+   "category": "buzzword",
+   "severity": "low",
+   "hint": "Değeri tanımla.",
+   "example": ""
+  },
+  {
+   "id": "tr067",
+   "regex": "(sinerji|ekosistem)",
+   "category": "buzzword",
+   "severity": "low",
+   "hint": "Teknik anlamda değilse değiştir.",
+   "example": ""
+  },
+  {
+   "id": "tr068",
+   "regex": "(göz önünde bulundurulmalıdır|dikkate alınmalıdır)",
+   "category": "formal_overload",
+   "severity": "low",
+   "hint": "'dikkat edin' / doğrudan öneri.",
+   "example": ""
+  },
+  {
+   "id": "tr069",
+   "regex": "(en iyi|en doğru) (şekilde|biçimde) (değerlendir|kullan)\\w*",
+   "category": "filler",
+   "severity": "low",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr070",
+   "regex": "(genel olarak|genellikle) (söylemek gerekirse|bakıldığında)",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr071",
+   "regex": "(belirli|bazı) durumlarda",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Hangi durumlar?",
+   "example": ""
+  },
+  {
+   "id": "tr072",
+   "regex": "(olabilir|olabilmektedir) ve bu (durum|da)",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Kesinleştir veya kaldır.",
+   "example": ""
+  },
+  {
+   "id": "tr073",
+   "regex": "(bir dereceye kadar|bir ölçüde|kısmen de olsa)",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Gerekli değilse sil.",
+   "example": ""
+  },
+  {
+   "id": "tr074",
+   "regex": "(her ne kadar|her ne kadar da)",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Tek başına sorun değil; yoğunluğa bak.",
+   "example": ""
+  },
+  {
+   "id": "tr075",
+   "regex": "(kişiden kişiye|duruma göre) (değişiklik gösterebilir|farklılık gösterebilir)",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Neye göre değiştiğini söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr076",
+   "regex": "(unutmayın|hatırlatmak isteriz) ki,? (her|herkesin)",
+   "category": "hedge",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr077",
+   "regex": "bir uzmana (danışmanız|başvurmanız) (önerilir|tavsiye edilir)",
+   "category": "hedge",
+   "severity": "low",
+   "hint": "Bağlam gerektirmiyorsa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr080",
+   "regex": "(sadece|yalnızca) [^.,]{1,40} (değil|değildir),? (aynı zamanda|ayrıca|bir)",
+   "category": "balanced",
+   "severity": "medium",
+   "hint": "Tek iddiayı doğrudan yaz.",
+   "example": "Sadece bir araç değil, aynı zamanda bir yaşam biçimi."
+  },
+  {
+   "id": "tr082",
+   "regex": "(hem|gerek) \\w+ (hem de|gerekse) \\w+ (açısından|bakımından)",
+   "category": "balanced",
+   "severity": "low",
+   "hint": "Tek başına sorun değil; tekrar ediyorsa azalt.",
+   "example": ""
+  },
+  {
+   "id": "tr083",
+   "regex": "(avantajları|artıları) (kadar|olduğu gibi) (dezavantajları|eksileri) da",
+   "category": "balanced",
+   "severity": "medium",
+   "hint": "Somut artı/eksileri say.",
+   "example": ""
+  },
+  {
+   "id": "tr084",
+   "regex": "(madalyonun|işin) (öbür|diğer) yüzü",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr085",
+   "regex": "iki ucu keskin bir kılıç",
+   "category": "cliche_metaphor",
+   "severity": "high",
+   "hint": "Sil; riski somut yaz.",
+   "example": ""
+  },
+  {
+   "id": "tr090",
+   "regex": "sonuç olarak(,| söylemek gerekirse| diyebiliriz ki)?",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Özet paragrafı gereksizse sil.",
+   "example": ""
+  },
+  {
+   "id": "tr091",
+   "regex": "(özetle|kısacası|toparlamak gerekirse|özetlemek gerekirse|son olarak söylemek gerekirse)",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Yeni bilgi yoksa paragrafı kaldır.",
+   "example": ""
+  },
+  {
+   "id": "tr092",
+   "regex": "(tüm bu|bütün bu) (bilgiler|faktörler|unsurlar) (ışığında|göz önüne alındığında)",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr093",
+   "regex": "(yukarıda|yukarıdaki) (bahsettiğimiz|belirttiğimiz|sıraladığımız)",
+   "category": "closing",
+   "severity": "low",
+   "hint": "Okuyucu hatırlıyor; sil.",
+   "example": ""
+  },
+  {
+   "id": "tr094",
+   "regex": "(umarız|umuyoruz ki) (bu )?(yazımız|rehberimiz|içeriğimiz|bilgiler) (size )?(faydalı|yardımcı) ol\\w*",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr095",
+   "regex": "(sorularınızı|görüşlerinizi) yorumlar(da|da bizimle) paylaş\\w*",
+   "category": "closing",
+   "severity": "low",
+   "hint": "Gerçek bir davetse kalsın; şablon ise sil.",
+   "example": ""
+  },
+  {
+   "id": "tr096",
+   "regex": "(gelecekte|ilerleyen yıllarda) (daha da )?(önemli|yaygın) (hale gel|ol)\\w*",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Kanıt yoksa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr097",
+   "regex": "(geleceği|gelecek) (parlak|umut vadeden|umut verici)",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr098",
+   "regex": "(doğru|bilinçli) (adımlarla|seçimlerle|bir yaklaşımla) (başarıya|hedeflerinize) ulaş\\w*",
+   "category": "closing",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr099",
+   "regex": "(unutmayın|hatırlayın),? (başarı|önemli olan)",
+   "category": "closing",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr100",
+   "regex": "(harika|güzel|mükemmel|çok iyi) bir soru",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr101",
+   "regex": "(elbette|tabii ki|memnuniyetle)[!,]",
+   "category": "chatbot_residue",
+   "severity": "medium",
+   "hint": "Sohbet artığı; sil.",
+   "example": ""
+  },
+  {
+   "id": "tr102",
+   "regex": "(size|sizlere) yardımcı olmaktan (mutluluk|memnuniyet) duy\\w*",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr103",
+   "regex": "(başka bir sorunuz|başka sorularınız) (olursa|varsa)",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr104",
+   "regex": "bir yapay zekâ( dil)? modeli olarak",
+   "category": "chatbot_residue",
+   "severity": "high",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr105",
+   "regex": "(işte|aşağıda) (size )?(bazı|birkaç) (öneri|ipucu|örnek)",
+   "category": "chatbot_residue",
+   "severity": "low",
+   "hint": "Liste başlığına gerek yoksa sil.",
+   "example": ""
+  }
+ ]
+}

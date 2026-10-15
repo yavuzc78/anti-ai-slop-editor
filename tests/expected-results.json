@@ -1,0 +1,21 @@
+{
+ "_doc": "min_score/max_score bound the Slop Density Score; must_hit = pattern or structure IDs that must fire; must_not_hit = IDs that must stay silent (false-positive guard). Clean samples assert max_score only.",
+ "tr-blog-slop-1":         {"min_score": 35, "must_hit": ["tr001", "tr006", "tr020", "tr090", "tr094", "S11"]},
+ "tr-blog-clean-1":        {"max_score": 5},
+ "tr-seo-slop-1":          {"min_score": 15, "must_hit": ["tr010", "tr011", "tr029", "tr080"]},
+ "tr-review-slop-1":       {"min_score": 15, "must_hit": ["tr024", "tr034"]},
+ "tr-email-slop-1":        {"min_score": 25, "must_hit": ["tr100", "tr102", "tr103"]},
+ "tr-formal-ok-1":         {"max_score": 10, "must_not_hit": ["S11", "S12"]},
+ "tr-structure-1":         {"min_score": 30, "must_hit": ["S01", "S13"]},
+ "tr-formal-overload-blog":{"min_score": 30, "must_hit": ["S11"]},
+ "tr-clean-2":             {"max_score": 5},
+ "tr-closing-1":           {"min_score": 15, "must_hit": ["tr092", "S04"]},
+ "en-blog-slop-1":         {"min_score": 35, "must_hit": ["en001", "en009", "en020", "en080", "en100", "en102", "en105"]},
+ "en-blog-clean-1":        {"max_score": 5},
+ "en-seo-slop-1":          {"min_score": 25, "must_hit": ["en010", "en039", "en042", "S13"]},
+ "en-review-slop-1":       {"min_score": 25, "must_hit": ["en026", "en038", "en040"]},
+ "en-email-slop-1":        {"min_score": 25, "must_hit": ["en110", "en112", "en115", "en117"]},
+ "en-clean-2":             {"max_score": 5},
+ "en-hedge-1":             {"min_score": 15, "must_hit": ["en070", "S14"]},
+ "en-vocab-1":             {"min_score": 25, "must_hit": ["en021", "en030", "en031"]}
+}
