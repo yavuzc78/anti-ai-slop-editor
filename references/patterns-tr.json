@@ -4,7 +4,7 @@
  "patterns": [
   {
    "id": "tr001",
-   "regex": "günümüzün hızla (değişen|gelişen)( \\w+)? dünyasında",
+   "regex": "günümüzün hızla (değişen|gelişen)( \\w+){0,3} dünyasında",
    "category": "stock_opener",
    "severity": "high",
    "hint": "Açılışı sil, doğrudan konuya gir.",
@@ -720,6 +720,86 @@
    "category": "chatbot_residue",
    "severity": "low",
    "hint": "Liste başlığına gerek yoksa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr106",
+   "regex": "baş döndürücü (bir )?(hız|hızla)",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "'hızla' yeter.",
+   "example": "Teknolojinin baş döndürücü bir hızla gelişmesi"
+  },
+  {
+   "id": "tr107",
+   "regex": "(olmanın|olmaktan) (da )?ötesine geç\\w*",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Neye dönüştüğünü doğrudan söyle.",
+   "example": ""
+  },
+  {
+   "id": "tr108",
+   "regex": "giderek artan bir öneme sahip",
+   "category": "significance",
+   "severity": "medium",
+   "hint": "Kanıt yoksa sil.",
+   "example": ""
+  },
+  {
+   "id": "tr109",
+   "regex": "hayatımızın (hemen hemen |neredeyse )?(her|tüm) (alanında|alanlarında)",
+   "category": "vague",
+   "severity": "medium",
+   "hint": "Hangi alanlar? Somutlaştır.",
+   "example": ""
+  },
+  {
+   "id": "tr110",
+   "regex": "geleceği şekillendir\\w*",
+   "category": "cliche_metaphor",
+   "severity": "medium",
+   "hint": "Nasıl şekillendirdiğini söyle ya da sil.",
+   "example": ""
+  },
+  {
+   "id": "tr111",
+   "regex": "insan odaklı bir yaklaşım",
+   "category": "buzzword",
+   "severity": "low",
+   "hint": "Ne anlama geldiğini açıkla.",
+   "example": ""
+  },
+  {
+   "id": "tr112",
+   "regex": "(önem|öneme) (arz eden|sahip olmaya devam)",
+   "category": "formal_overload",
+   "severity": "medium",
+   "hint": "Sadeleştir.",
+   "example": ""
+  },
+  {
+   "id": "tr113",
+   "regex": "(beraberinde|yanında) (bazı|birtakım|çeşitli) (zorluklar|sorunlar|riskler)",
+   "category": "vague",
+   "severity": "low",
+   "hint": "Zorlukları say.",
+   "example": ""
+  },
+  {
+   "id": "tr114",
+   "regex": "her (teknolojik )?gelişmede olduğu gibi",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Sil.",
+   "example": ""
+  },
+  {
+   "id": "tr115",
+   "regex": "(dikkat edilmesi gereken|göz önünde bulundurulması gereken) en önemli (husus|nokta)",
+   "category": "filler",
+   "severity": "medium",
+   "hint": "Doğrudan öneriyi yaz.",
    "example": ""
   }
  ]
