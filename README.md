@@ -15,7 +15,7 @@ Slop Density: 10 → 0 (lower is better)
 
 ## What it does
 
-- **Phrase catalog** — 90 Turkish and 86 English patterns: stock openers, inflated significance, buzzwords, filler, stacked hedges, chatbot residue, robotic closings.
+- **Phrase catalog** — 100 Turkish and 86 English patterns: stock openers, inflated significance, buzzwords, filler, stacked hedges, chatbot residue, robotic closings.
 - **Structure analysis** — repeated sentence starts, uniform sentence length, triplet lists, "not X but Y" frames, connector stacking, mechanical conclusions, and `-mektedir/-maktadır` density for Turkish.
 - **Genre-aware** — `blog`, `seo`, `email`, `review`, `formal`, `social`. Official Turkish correspondence keeps its formulas; a blog post doesn't.
 - **Change table** — original, edit, severity and a one-line reason for every change.
